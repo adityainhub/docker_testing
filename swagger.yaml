@@ -1,0 +1,39 @@
+openapi: 3.0.0
+info:
+  title: Products API
+  version: 1.0.0
+paths:
+  /products:
+    get:
+      summary: Get all products
+      responses:
+        '200':
+          description: A list of products
+    post:
+      summary: Add a new product
+      responses:
+        '201':
+          description: Product added
+  /products/{product_id}:
+    get:
+      summary: Get a single product
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A product
+    delete:
+      summary: Delete a product
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Product deleted
