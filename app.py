@@ -11,6 +11,7 @@ products = [
 # GET all products
 @app.route('/products', methods=['GET'])
 def get_products():
+    print("Hello users.. I am Aditya the developer")
     return jsonify(products)
 
 # GET single product
